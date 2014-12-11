@@ -14,10 +14,9 @@ endfunction
 
 if !exists('g:snips_no_mappings') || !g:snips_no_mappings
 	if exists('g:snips_trigger_key')
-		echom 'g:snips_trigger_key is deprecated. See :h snipMate-mappings'
-		exec 'imap <unique>' g:snips_trigger_key '<Plug>snipMateTrigger'
-		exec 'smap <unique>' g:snips_trigger_key '<Plug>snipMateSNext'
-		exec 'xmap <unique>' g:snips_trigger_key '<Plug>snipMateVisual'
+		exec 'imap <unique>' g:snips_trigger_key '<Plug>snipMateNextOrTrigger'
+		"exec 'smap <unique>' g:snips_trigger_key '<Plug>snipMateSNext'
+		"exec 'xmap <unique>' g:snips_trigger_key '<Plug>snipMateVisual'
 	else
 		" Remove SuperTab map if it exists
 		let s:overwrite = maparg('<Tab>', 'i') ==? '<Plug>SuperTabForward'
